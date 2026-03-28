@@ -23,35 +23,36 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-8'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        scrolled ? 'premium-blur py-5 shadow-sm' : 'bg-transparent py-10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Home className={`w-6 h-6 ${scrolled ? 'text-gold' : 'text-white'}`} />
-          <span className={`text-xl font-medium tracking-widest uppercase ${scrolled ? 'text-navy' : 'text-white'}`}>
+        <div className="flex items-center gap-3 group cursor-pointer">
+          <Home className={`w-5 h-5 transition-colors duration-500 ${scrolled ? 'text-gold' : 'text-white'}`} />
+          <span className={`text-2xl font-serif tracking-[0.2em] uppercase transition-colors duration-500 ${scrolled ? 'text-navy' : 'text-white'}`}>
             PrimeNest
           </span>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden md:flex items-center gap-16">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`text-xs uppercase tracking-[0.2em] font-medium transition-colors hover:text-gold ${
+              className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all duration-500 hover:text-gold relative group ${
                 scrolled ? 'text-navy' : 'text-white'
               }`}
             >
               {link.name}
+              <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full" />
             </a>
           ))}
-          <button className={`px-6 py-2 text-xs uppercase tracking-widest border transition-all duration-300 ${
+          <button className={`px-10 py-3 text-[10px] uppercase tracking-[0.3em] font-bold border transition-all duration-700 ${
             scrolled 
-              ? 'border-navy text-navy hover:bg-navy hover:text-white' 
-              : 'border-white/30 text-white hover:bg-white hover:text-navy'
+              ? 'border-navy/20 text-navy hover:bg-navy hover:text-white' 
+              : 'border-white/20 text-white hover:bg-white hover:text-navy'
           }`}>
             Consultation
           </button>

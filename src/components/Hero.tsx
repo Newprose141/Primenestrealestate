@@ -7,51 +7,58 @@ export default function Hero() {
       {/* Background Image with Zoom Animation */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="w-full h-full bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center hero-bg-zoom"
+          className="w-full h-full bg-[url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop')] bg-cover bg-center hero-bg-zoom"
         />
-        <div className="absolute inset-0 bg-navy/40" />
+        <div className="absolute inset-0 bg-navy/30" />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        <motion.span
+      <div className="relative z-10 text-center px-6 max-w-5xl">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inline-block text-gold text-xs md:text-sm uppercase tracking-[0.4em] font-medium mb-6"
+          transition={{ duration: 1 }}
+          className="mb-8"
         >
-          Premium Real Estate Solutions
-        </motion.span>
+          <span className="inline-block text-gold text-[10px] md:text-xs uppercase tracking-[0.6em] font-semibold">
+            PrimeNest Realty &bull; Lagos
+          </span>
+        </motion.div>
         
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-8xl text-white font-light tracking-tight leading-tight mb-8"
+          transition={{ duration: 1, delay: 0.2 }}
+          className="text-6xl md:text-9xl text-white font-light tracking-tight leading-[0.9] mb-12"
         >
           Luxury Living, <br />
-          <span className="italic font-normal text-gold">Perfectly Placed</span>
+          <span className="italic font-light text-gold-light">Perfectly Placed</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light"
+          className="text-white/90 text-lg md:text-2xl mb-12 max-w-2xl mx-auto font-light leading-relaxed"
         >
-          Discover exclusive homes, high-value investments, and premium real estate opportunities curated for modern living and long-term growth in Lagos.
+          Discover exclusive homes and high-value investments curated for the discerning modern elite.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6"
+          className="flex flex-col sm:flex-row items-center justify-center gap-8"
         >
-          <button className="px-10 py-4 bg-gold hover:bg-gold-dark text-white text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 min-w-[220px]">
-            Explore Properties
+          <button className="group relative px-12 py-5 overflow-hidden">
+            <div className="absolute inset-0 bg-gold transition-transform duration-500 group-hover:scale-105" />
+            <span className="relative text-white text-[10px] uppercase tracking-[0.3em] font-bold">
+              Explore Properties
+            </span>
           </button>
-          <button className="px-10 py-4 border border-white/30 hover:bg-white hover:text-navy text-white text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 min-w-[220px]">
-            Book a Consultation
+          <button className="group relative px-12 py-5 overflow-hidden border border-white/40 hover:border-white transition-colors duration-500">
+            <span className="relative text-white text-[10px] uppercase tracking-[0.3em] font-bold">
+              Book Consultation
+            </span>
           </button>
         </motion.div>
       </div>
