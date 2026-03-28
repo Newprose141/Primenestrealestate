@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-navy: #0B1C2C;
+  --color-gold: #C9A96E;
+  --color-gold-dark: #b8935a;
+  --color-off-white: #F8F6F3;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-navy bg-white overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .hero-bg-zoom {
+    animation: zoom-out 20s ease-out forwards;
+  }
+
+  @keyframes zoom-out {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+  }
+}
